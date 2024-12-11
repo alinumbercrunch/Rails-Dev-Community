@@ -58,3 +58,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "kaminari"
+gem "faker"
+gem "devise"
+gem "cssbundling-rails"
