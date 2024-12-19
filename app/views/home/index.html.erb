@@ -1,3 +1,18 @@
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<!-- ✅ Grid Section - Starts Here 👇 -->
+<section id="Users"
+    class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5 font-montserrat">
+    <!-- Loop through users and create cards -->
+    <% @users.each do |user| %>
+      <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl text-center">
+        <div class="mx-auto w-24 h-24 rounded-full border-4 border-custom-blue overflow-hidden">
+          <%= image_tag "dummy.png", class: "w-full h-full object-cover" %>
+        </div>
+        <div class="px-4 py-3 w-72">
+          <h2 class="text-lg font-bold text-black truncate block capitalize"><%= formatted_full_name(user) %></h2>
+          <p class="text-gray-700"><%= user.profile_title %></p>
+          <small class="text-custom-blue text-sm mt-1 block"><%= user.country %></small>
+          <%= link_to "View Profile", "javascript:void(0)", class: "bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mt-4 inline-block" %>
+        </div>
+      </div>
+    <% end %>
+</section>
