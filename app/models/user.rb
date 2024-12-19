@@ -7,4 +7,7 @@ class User < ApplicationRecord
   def name
     "#{first_name} #{last_name}".strip
   end
+   def self.ransackable_attributes(auth_object = nil)
+    ["country"]
+  end
 end
